@@ -1,0 +1,13 @@
+body{
+  padding: 25px;
+}
+.header {
+	background-color: #5C6AC4;
+}
+
+.main {
+	background-color: lightblue;
+}
+.footer {
+	background-color: green;
+}
