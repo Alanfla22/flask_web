@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Meu App</title>
+    <link rel="stylesheet" href="static/styles.css" />
+  </head>
+  <body>
+    <header class='header'>
+      <h1>Meu Aplicativo</h1>
+    </header>
+    <main class='main'>
+      <section>
+        <h2>Inserir Filmes</h2>
+        <form method='POST' action="/">
+          <label for="title">Título:</label><br>
+          <input type="text" id="title" name="title"><br>
+          <label for="year">Ano:</label><br>
+          <input type="text" id="year" name="year"><br>
+          <label for="score">Score:</label><br>
+          <input type="text" id="score" name="score"><br><br>
+          <input type="submit" value="Submit">
+        </form> 
+      </section>
+      <section>
+        <h2>Lista de filmes</h2>
+        <form method='POST' action="/ordenar">
+          <label for="item">Ordene por:</label>
+          <select id="item" name="item">
+            <option value="rowid">ID</option>
+            <option value="title">Title</option>
+            <option value="year">Year</option>
+            <option value="score">Score</option>
+          </select>
+          <input type="submit">
+        </form>        
+        <ul>
+          {% for res in result.all() %}
+            <li>{{ res[0] }}</li>
+          {% endfor %}          
+        </ul>
+      </section>
+    </main>
+    <footer class='footer'>
+      <h1>Final do Aplicativo</h1>      
+    </footer>
+
+  </body>
+</html>
